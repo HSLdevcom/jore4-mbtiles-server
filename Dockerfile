@@ -2,5 +2,6 @@
 
 FROM consbio/mbtileserver
 EXPOSE 8000
-ADD https://jore4storage.blob.core.windows.net/jore4-ui/dr_linkki.mbtiles /tilesets/dr_linkki.mbtiles
-CMD ["./mbtileserver"]
+RUN apk add --update curl
+COPY start.sh start.sh
+ENTRYPOINT /start.sh
