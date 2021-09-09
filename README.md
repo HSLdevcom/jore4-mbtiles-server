@@ -21,9 +21,10 @@ Check that everything is working as expected: go to http://localhost:3200/servic
 
 ## Docker reference
 
-| Environment variable | Example                                                               | Description                                             |
-| -------------------- | --------------------------------------------------------------------- | ------------------------------------------------------- |
-| DR_LINKKI_TILES_URL  | https://jore4storage.blob.core.windows.net/jore4-ui/dr_linkki.mbtiles | Complete url where dr_linkki.mbtiles file can be found. |
+| Environment variable | Example                                | Description                                                |
+| -------------------- | -------------------------------------- | ---------------------------------------------------------- |
+| DR_LINKKI_TILES_URL  | https://example.com/dr_linkki.mbtiles  | Complete url where `dr_linkki.mbtiles` file can be found.  |
+| DR_PYSAKKI_TILES_URL | https://example.com/dr_pysakki.mbtiles | Complete url where `dr_pysakki.mbtiles` file can be found. |
 
 ## Updating vector tiles
 
