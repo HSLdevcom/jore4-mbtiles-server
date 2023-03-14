@@ -20,10 +20,12 @@ jobs:
         uses: HSLdevcom/jore4-tools/github-actions/extract-metadata@extract-metadata-v1
 
       - name: Pull previous image to support caching
-        run: docker pull $IMAGE_NAME:latest || >&2 echo "Previous image not found"
+        run:
+          docker pull $IMAGE_NAME:latest || >&2 echo "Previous image not found"
 
       - name: Build docker image for distribution
-        run: docker build --cache-from=$IMAGE_NAME:latest -t $IMAGE_NAME:latest .
+        run:
+          docker build --cache-from=$IMAGE_NAME:latest -t $IMAGE_NAME:latest .
 
       - name: Tag docker image as '<branch_name>--<git_commit_sha>'
         run: docker tag $IMAGE_NAME:latest $IMAGE_NAME:$COMMIT_ID
@@ -50,18 +52,9 @@ jobs:
         uses: HSLdevcom/jore4-tools/github-actions/extract-metadata@extract-metadata-v1
 
       - name: start e2e env
-        uses: HSLdevcom/jore4-flux/github-actions/setup-e2e-environment@setup-e2e-environment-v1
+        uses: HSLdevcom/jore4-tools/github-actions/setup-e2e-environment@setup-e2e-environment-v1
         with:
-          mbtiles_version: $IMAGE_NAME:$COMMIT_ID
+          mbtiles_version: "${{ env.IMAGE_NAME }}:${{ env.COMMIT_ID }}"
 
-      - name: run e2e smoke tests
-        id: tests
-        uses: HSLdevcom/jore4-robot/github-actions/run-rf-tests@actions-v1
-        with:
-          included_tag: smoke
-          e2e_username: ${{ secrets.ROBOT_HSLID_EMAIL }}
-          e2e_password: ${{ secrets.ROBOT_HSLID_PASSWORD }}
-
-      - name: upload test results
-        if: always()
-        uses: HSLdevcom/jore4-robot/github-actions/upload-results@actions-v1
+      - name: Run e2e tests from github action
+        uses: HSLdevcom/jore4-tools/github-actions/run-cypress-tests@run-cypress-tests-v1
