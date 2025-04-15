@@ -1,6 +1,6 @@
 # jore4-mbtiles-server
 
-This repository includes Dockerfile for [consbio/mbtileserver](https://hub.docker.com/r/consbio/mbtileserver).
+This repository includes Dockerfile for [consbio/mbtileserver](https://github.com/consbio/mbtileserver).
 It is used for building docker image that serves jore4-related vector tiles.
 
 ## Usage

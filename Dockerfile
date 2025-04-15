@@ -1,6 +1,6 @@
-# https://hub.docker.com/r/consbio/mbtileserver
+# https://github.com/consbio/mbtileserver/pkgs/container/mbtileserver
 
-FROM consbio/mbtileserver
+FROM ghcr.io/consbio/mbtileserver:latest
 EXPOSE 8000
 RUN apk add --update curl
 ENV DR_LINKKI_TILES_URL="https://jore4storage.blob.core.windows.net/jore4-ui/dr_linkki.mbtiles"
