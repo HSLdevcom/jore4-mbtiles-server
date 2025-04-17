@@ -10,7 +10,7 @@ on:
 jobs:
   publish_docker_image_to_docker_hub:
     name: Build & Push docker image to Docker Hub
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout code
@@ -59,7 +59,7 @@ jobs:
   run_e2e_tests:
     needs: publish_docker_image_to_docker_hub
     name: Run E2E tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Extract metadata to env variables
         uses: HSLdevcom/jore4-tools/github-actions/extract-metadata@extract-metadata-v1
