@@ -25,6 +25,7 @@ Check that everything is working as expected: go to http://localhost:3200/servic
 | -------------------- | -------------------------------------- | ---------------------------------------------------------- |
 | DR_LINKKI_TILES_URL  | https://example.com/dr_linkki.mbtiles  | Complete url where `dr_linkki.mbtiles` file can be found.  |
 | DR_PYSAKKI_TILES_URL | https://example.com/dr_pysakki.mbtiles | Complete url where `dr_pysakki.mbtiles` file can be found. |
+| TRAM_LINKS_TILES_URL | https://example.com/tram_links.mbtiles | Complete url where `tram_links.mbtiles` file can be found. |
 
 ## Updating vector tiles
 
