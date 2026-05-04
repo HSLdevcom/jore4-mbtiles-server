@@ -31,6 +31,6 @@ Check that everything is working as expected: go to http://localhost:3200/servic
 
 Vector tiles are stored in HSL organization's Azure account. For access rights consult project members.
 Tiles can be updated at least from Azure Portal:
-Dashboard > Storage Accounts > jore4storage > jore4-ui > upload new files, e.g. `dr_linkki.mbtiles`.
+Dashboard > Storage Accounts > stjore4dev001 > jore4-ui > upload new files, e.g. `dr_linkki.mbtiles`.
 After vector tiles are uploaded to Azure storage, you have to restart Docker image.
 Please note that if you upload new tiles with new name (e.g. for versioning purposes, something like `yyyy-mm-dd-dr_linkki.mbtiles`) then url of that file changes and you also have to update env variables passed to docker image accordingly.
